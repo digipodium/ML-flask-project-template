@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/booking.css">
+{% endblock css %}
+
+
+{% block body %}
+
+	<form action="" class="container booking" name="booking">
+		<div class="header"></div>
+
+		<div class="dates" data-type="none">
+            
+            <label>College  Name</label>
+            <div class="input-text">
+				<input type="text"  id=" "name="college">
+				
+			</div>
+
+			<label>Name</label>
+			<div class="input-text">
+				<input type=" text" name="name">
+				
+			</div>
+
+			<label> venue </label>
+			<div class="input-text">
+				<input type=" text" name="venue">
+			</div>
+
+            <label for="Date">Date</label>
+                <div class="input-text">
+                    <input type="datetime" value="dd/mm/yyyy" id="Date" name="booking_date">
+                </div><div id="overlay"></div>
+        <div class="container calendar">
+            <div class="header">
+                <div class="icon arr prev"></div>
+                <div class="month">May 2014</div>
+                <div class="icon arr next"></div>
+            </div>
+	</div>
+			</li>
+			<li>
+				<label>Duration</label>
+				<div class="input-text" name="duration">
+					<select name="Duration">
+						<option value="0">0</option>
+						<option value="1" selected="selected">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option> 
+                        <option value="5">5</option>  
+					</select>
+					
+				</div>
+			</li>
+		</ul>
+
+		<button class="button-big" id="submit"><div class=></div>Submit</button>
+	</form>
+
+{% endblock %}
+
+
+

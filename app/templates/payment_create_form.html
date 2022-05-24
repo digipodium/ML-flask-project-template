@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+    
+{% block css %}
+<style>
+    body{
+        background-color: beige;
+        background-image: url('/static/images/news_logo.svg');
+        background-repeat: no-repeat;
+        background-position:right;
+    }
+    .row>* {
+        flex-shrink: 0;
+        width: 75%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x)/ 2);
+        padding-left: calc(var(--bs-gutter-x)/ 2);
+        margin-top: var(--bs-gutter-y);
+    }
+</style>
+{% endblock css %}
+{% block body %}
+<div class="mb-3">
+  <label for="" class="form-label">Card Number</label>
+  <input type="number" class="form-control" name="carNumber" id="carNumber" aria-describedby="helpId" placeholder="">
+  <small id="helpId" class="form-text text-muted">Enter the 16 numbers on the front of card</small>
+</div>  
+<div class="mb-3">
+    <label for="" class="form-label">CVV</label>
+    <input type="password" class="form-control" name="cvv" id="cvv" aria-describedby="helpId" placeholder="">
+    <small id="helpId" class="form-text text-muted"></small>
+  </div>  
+<div class="mb-3">
+    <label for="" class="form-label">Expiry Date of Card</label>
+    <input type="month" class="form-control" name="expiryDate" id="expiryDate" aria-describedby="helpId" placeholder="">
+    <small id="helpId" class="form-text text-muted"></small>
+  </div>  
+<div class="mb-3">
+    <label for="" class="form-label">Enter Amount</label>
+    <input type="number" class="form-control" name="number" id="number" aria-describedby="helpId" placeholder="">
+    <small id="helpId" class="form-text text-muted"></small>
+  </div>  
+<button type="submit" class="btn btn-success" name="submit">Submit</button>
+
+{% endblock body %}
+
+
+

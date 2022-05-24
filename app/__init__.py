@@ -1,10 +1,6 @@
 import logging
 
 from flask import Flask
-try:
-    from sklearn.externals import joblib
-except:
-    import joblib
 
 # create logger for app
 logger = logging.getLogger('app')
@@ -15,20 +11,21 @@ logging.basicConfig(format=FORMAT)
 
 app = Flask(__name__)
 app.config.from_object("app.config")
-
+app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///predictions.sqlite3'  # step 2
+app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 # unpickle my models
-MODELS = {
-    "iris": {
-        "estimator" : joblib.load('models/iris/model.pkl'),
-        "target_names": ['setosa', 'versicolor', 'virginica']
-    }
-}
+
 
 from .views import *   # flake8: noqa
-
+from .models import *
 
 # Handle Bad Requests
 @app.errorhandler(404)
 def page_not_found(e):
     """Page Not Found"""
     return render_template('404.html'), 404
+
+with app.app_context():
+    db.init_app(app)
+    db.create_all()
+

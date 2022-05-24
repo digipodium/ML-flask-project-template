@@ -1,63 +1,49 @@
 {% extends 'base.html' %}
 
-{% block header %}
+{% block css %}
 <link rel="stylesheet" href="/static/css/style.css">
-{% endblock header %}
+{% endblock %}
 
 {% block body %}
 
-<section class="container-fluid my-4">
-  <div class="row vh-90">
-    <div class="col-md-12 mx-auto">
-      <div class="form-area">
-        <div class="card mb-3 shadow-lg" style="max-width: 740px;">
-          <div class="card-header">
-            <h4 class="my-0 font-weight-normal text-center ">AI Based Iris Species Prediction</h4>
-          </div>
-          <div class="row g-0">
-            <div class="col">
-              <div class="card-body">
-                <h5 class="card-title">Predict Sub Species</h5>
-                <form method="POST" class="form">
-                  {{ form.hidden_tag() }}
-                  <div class="row">
-                    <div class="col-12">
-                      {{ form.sepal_length.label }} {{ form.sepal_length(class="form-control form-control-lg") }}
-                    </div>
-                    <div class="col-12">
-                      {{ form.sepal_width.label }} {{ form.sepal_width(class="form-control form-control-lg") }}
-                    </div>
-                    <div class="col-12">
-                      {{ form.petal_length.label }} {{ form.petal_length(class="form-control form-control-lg") }}
-                    </div>
-                    <div class="col-12">
-                      {{ form.petal_width.label }} {{ form.petal_width(class="form-control form-control-lg") }}
-                    </div>
-                  </div>
-                  <div class="row">
-                    <div class="col ">
-                      <button type="submit" class="btn btn-primary form-control my-3">Predict</button>
-                    </div>
-                  </div>
-                </form>
-              </div>
-            </div>
-            {% if prediction %}
-            <div class="col-md-6 p-3">
-              <h2>It is a {{ prediction }}</h2>
-              <img src="{{url_for('static', filename='images/iris_' + prediction + '.jpg')}}" height="100%"
-                class="img-fluid shadow-lg rounded" />
-            </div>
-            {% endif %}
-
-          </div>
-        </div>
-      </div>
+<div class="parallax1">
+    <div class="heading">
+        Event Booking System for colleges
     </div>
-  </div>
-</section>
-{% endblock body %}
+</div>
 
-{% block js %}
-<script src="/static/js/index.js"></script>
-{% endblock js %}
+<section class="desc" id="one">
+    <br>
+    <div class="flexbox1">
+        <div class="common s-1">
+            <img src="/static/images/event-booking-white.jpg">
+        </div>
+        <div class="common s-2">
+            <img src="https://raw.githubusercontent.com/humairafathima/fcc-projects/master/stylesheet/resource/s-2.png" alt="orderlogo">
+            <section>
+                <h3> Online Order and Fast delivery</h3>
+            <p>We take online orders and have the fastest delivery time. No matter where you are, we will get there!</p>
+            </section>
+        </div>
+        <div class="common s-3">
+            <img src="https://raw.githubusercontent.com/humairafathima/fcc-projects/master/stylesheet/resource/s-3.png" alt="eventlogo">
+            <section>
+                <h3>Event Management</h3>
+            <p>We also offer Event management service that include everthing realtod to decor and arrangements that are flower oriented.</p>
+            </section>
+        </div>
+        <div class="common s-4">
+            <img src="https://raw.githubusercontent.com/humairafathima/fcc-projects/master/stylesheet/resource/s-4.png" alt="flowerlogo">
+        </div>
+    </div>
+</section>
+
+    <section class="eventmgt" id="five">
+        <div class="two-column">
+                <h2>Event management</h2>
+        </div>
+        <div class="two-column">
+            <p>We also specialize in Event-Venue decorations. We have a great repertoire of designs to suit all kinds of events. Just leave it to us!</p>
+        </div>
+    </section>
+{% endblock %}

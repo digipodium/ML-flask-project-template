@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+    
+    {% block css %}
+    <style>.table {
+        --bs-table-bg: linen;
+        --bs-table-accent-bg: honeydew;
+        --bs-table-striped-color: #212528;
+        --bs-table-striped-bg: rgba(0, 0, 0, 0.05);
+        --bs-table-active-color: #212527;
+        --bs-table-active-bg: rgba(0, 0, 0, 0.1);
+        --bs-table-hover-color: #212529;
+        --bs-table-hover-bg: rgba(0, 0, 0, 0.075);
+        width: 100%;
+        margin-bottom: 14rem;
+        color: darkslategrey;
+        vertical-align: baseline;
+        border-color: blanchedalmond;
+    }
+    table {
+        caption-side: bottom;
+        border-collapse: separate;
+    }
+</style>
+{% endblock css %}
+
+
+{% block body %}
+<i class="fa fa-align-center" aria-hidden="true"><center><h2>News</h2></center></i>
+<div class="card shadow-lg m-5">
+    <table class="table table-striped|sm|bordered table-inverse table-responsive">
+        <thead class="thead-inverse|thead-default">
+            <tr>
+                <th><b>Name of the Event</b></th>   
+                <th><b>Venue</b></th>
+                <th><b>Booking Date</b></th>
+                <th><b>Price per Day</b></th>
+            
+            </tr>
+        </thead>
+        <tbody>
+            {% for item in records %}
+            <tr>
+                <td >{{item.id}}</td>
+                <td >{{item.headline}}</td>
+                <td >{{item.content}}</td>
+                <td ><a href="">Predict</a></td>
+             
+            </tr>
+            {% endfor %}    
+        </tbody>    
+    </table>
+</div>
+
+{% endblock body %}
