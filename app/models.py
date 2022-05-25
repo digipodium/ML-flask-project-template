@@ -50,7 +50,7 @@ class Venue(db.Model):
     image_2 = db.Column(db.String)
     image_3 = db.Column(db.String)
     image_4 = db.Column(db.String)
-    price = db.Column(db.Integer,primary_key=True)
+    price = db.Column(db.Integer)
     isbooked =db.Column(db.Boolean)
     admin = db.Column(db.Integer, db.ForeignKey('admin.id'))
 
@@ -75,15 +75,13 @@ class Event(db.Model):
 
 class Booking(db.Model):
     id = db.Column(db.Integer, primary_key=True)
-    venue = db.Column(db.Integer, db.ForeignKey('collegeadmin.id'))
     event = db.Column(db.Integer, db.ForeignKey('collegeadmin.id'))
-    iscomplete = db.Column(db.Boolean)
     college_admin = db.Column(db.Integer, db.ForeignKey('collegeadmin.id'))
     college=db.Column(db.String,nullable=False)
     name=db.Column(db.String,nullable=False)
     venue=db.Column(db.String,nullable=False)
-    booking_date=db.Column(db.DateTime,default=datetime.utcnow )
-
+    duration=db.Column(db.Integer,nullable=False)
+   
     def __str__(self) -> str:
             return self.id
 
