@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+
+    
+{% block css %}
+<style>
+    body{
+        background-color: beige;
+        background-image: url('/static/images/news_logo.svg');
+        background-repeat: no-repeat;
+        background-position:right;
+    }
+    .row>* {
+        flex-shrink: 0;
+        width: 75%;
+        max-width: 100%;
+        padding-right: calc(var(--bs-gutter-x)/ 2);
+        padding-left: calc(var(--bs-gutter-x)/ 2);
+        margin-top: var(--bs-gutter-y);
+    }
+</style>
+{% endblock css %}
+{% block body %}
+<div class="container">
+    <div class="row">
+        <div class="col-sm-12-md-6">
+            <div class="card shadow-lg m-5">                
+                <form  method="post" enctype="multipart/form-data" class="p-2">
+                    <div class="mb-3">
+                        <label for="" class="form-label">TITLE</label>
+                        <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="">
+                    </div> 
+                    <div class="mb-3">
+                        <label for="" class="form-label">ADDRESS</label>
+                        <input type="address" class="form-control" name="address" id="address" aria-describedby="helpId" placeholder="">
+                    </div> 
+                    bs5-input
+                    <div class="mb-3">
+                        <label for="" class="form-label">ADD IMAGES (MAXIMUM 4)</label>
+                        <input type="file" class="form-control" name="image_1" id="image_1" aria-describedby="helpId" placeholder="">
+                        <input type="file" class="form-control" name="image_2" id="image_2" aria-describedby="helpId" placeholder="">
+                        <input type="file" class="form-control" name="image_3" id="image_3" aria-describedby="helpId" placeholder="">
+                        <input type="file" class="form-control" name="image_4" id="image_4" aria-describedby="helpId" placeholder="">
+                    </div>
+                    <div class="mb-3">
+                        <label for="" class="form-label">Price per Day </label>
+                        <input type="number" class="form-control" name="price" id="price" aria-describedby="helpId" placeholder="">
+                    </div> 
+                   
+                    <button type="submit" class="btn btn-success ">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% block css %}
+<link rel="stylesheet" href="/static/css/booking.css">
+{% endblock css %}
+
+
+{% block body %}
+
+	<form method="post" class="container booking" name="booking">
+		<div class="header"></div>
+
+		<div class="dates" data-type="none">
+            
+            <label>College  Name</label>
+            <div class="input-text">
+				<input type="text"  id="college" name="college">
+				
+			</div>
+
+			<label>Name</label>
+			<div class="input-text">
+				<input type=" text" name="name" id="name">
+				
+			</div>
+
+			<label> venue </label>
+			<div class="input-text">
+				<input type=" text" name="venue" id="venue">
+			</div>
+
+            
+      
+	</div>
+			</li>
+			<li>
+				<label>Duration</label>
+				<div class="input-text" name="duration">
+					<select name="duration">
+						<option value="0">0</option>
+						<option value="1" selected="selected">1</option>
+						<option value="2">2</option>
+						<option value="3">3</option>
+						<option value="4">4</option> 
+                        <option value="5">5</option>  
+					</select>
+					
+				</div>
+			</li>
+		</ul>
+
+		<button class="button-big" id="submit"><div class=></div>Submit</button>
+	</form>
+
+{% endblock %}
+
+
+
